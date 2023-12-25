@@ -6,7 +6,8 @@ body {
 #container {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 4fr;
+    height: 100%;
+    width: 100%;
 }
 
 #sidebar {
@@ -31,6 +32,15 @@ img {
 
 ul {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    font-size: 1.4em;
 }
 
 #header {
@@ -41,26 +51,99 @@ ul {
 }
 
 #top {
-    display: flex;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-#top>input {
-    flex: 1;
+.search {
+    grid-column: 1/5;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    input {
+        flex: 1;
+        height: 1.3rem;
+        border-radius: 20px;
+        border: none;
+        background-color: #e2e8f0;
+    }
+}
+
+.notification {
+    display: flex;
+    justify-self: end;
+    align-self: center;
+    height: 3rem;
+    width: 3rem;
+    border: none;
+    background-color: white;
+
+    img {
+        display: flex;
+        align-self: center;
+        height: 2rem;
+        width: 2rem;
+    }
+}
+
+.r-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+
+    img {
+        height: 3rem;
+        width: 3rem;
+    }
 }
 
 #bottom {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 20px;
 }
 
-#bottom>div {
-    flex: 1;
+.l-profile {
+    grid-column: 1 / 6;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    img {
+        height: 60px;
+        width: 60px;
+    }
+
+    :nth-child(1) {
+        font-size: 1rem;
+    }
+
+    :nth-child(2) {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+}
+
+.h-button {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    button {
+        background-color: #198fd2;
+        color: white;
+        border-radius: 40px;
+        border: none;
+        font-size: 1.2rem;
+        padding: 10px 40px;
+    }
 }
 
 #content-container {
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 2.5fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 20px;
     padding: 20px;
@@ -76,13 +159,26 @@ ul {
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(2, minmax(50px, 1fr));
-    grid-template-rows: repeat(3, minmax(50px, 1fr));
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    grid-template-rows: repeat(3, minmax(100px, 0.3fr));
     gap: 20px;
 }
 
 .card-container>.card {
     border-left: 10px solid #f0b639;
+}
+
+.card-content {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    height: 100%;
+}
+
+.images {
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+    align-items: end;
 }
 
 #announcement,
@@ -95,11 +191,33 @@ ul {
 .announcement {
     padding: 10px;
     border-bottom: 1px solid;
+    font-size: 1em;
 }
 
+.title {
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.trending {
+    display: flex;
+    font-size: 1.4em;
+    gap: 20px;
+    align-items: center;
+}
+
+#trending>.card {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+}
+
+.trending>img {
+    height: 2em;
+    width: 2em;
+}
 
 .card {
     background-color: white;
     border-radius: 10px;
-    padding: 10px;
+    padding: 40px;
 }
